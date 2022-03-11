@@ -1,0 +1,13 @@
+GGKJB2
+Konjiki no Gash Bell!! Yujo Tag Battle Full Power
+
+
+No Deflicker
+0625eed2 00000007
+00001516 15000000
+
+Force 2P costume on P2
+00273f0d 00000001
+
+Force 2P costume on P1
+00273d99 00000001
