@@ -11,7 +11,7 @@ Supported codes:
 - (COMING SOON) Konjiki no Gash Bell!! Go! Go! Mamono Fight!!
 
 
-Screenshot:
+Screenshots:
 
 ![Alt text](https://user-images.githubusercontent.com/6880539/157973614-d6df6e62-38e8-4fd0-938f-2c566590dcb8.png?raw=true "P2 costumes")
 
