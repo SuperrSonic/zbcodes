@@ -103,3 +103,23 @@ de000000 80008180
 de000000 80008180
 120003ee 00000010
 e0000000 80008000
+
+
+To force load a different character change line 6
+0x00 = endless loop loading screen
+0x01 = Zatch
+0x02 = Tia
+0x03 = Brago
+0x04 = Zeno
+0x05 = Kanchome
+0x06 = Bari
+0x07 = Kido
+0x08 = Wonrei
+0x09 = Umagon/Sunbeam-san
+0x0A = Victoream
+0x0B = Laila
+0x0C = Zofis
+0x0D = Laila (Albert awake)
+0x0E = Zofis (Milordo-Z)
+0x0F = Ponygon
+0x10 = endless loop (possibly Maestro, but missing .seg)
