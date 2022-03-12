@@ -21,3 +21,22 @@ de000000 80008180
 1200000e 0000000c
 12000116 00000001
 e0000000 80008000
+
+
+To force a character change line 6, to enable Laila2/Milordo-Z use line 7 = 00000001
+0x00 = Kanchome
+0x01 = Kido
+0x02 = Tia
+0x03 = Brago
+0x04 = Zatch
+0x05 = Wonrei
+0x06 = Zeno
+0x07 = RANDOM/Always loads Zatch
+0x08 = Zofis
+0x09 = Victoream
+0x0A = Ponygon/Sunbeam
+0x0B = Laila
+0x0C = Maestro
+0x0D = Zatch
+0x0E = Zatch
+0xFF = Zatch
