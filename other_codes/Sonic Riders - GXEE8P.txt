@@ -1,0 +1,24 @@
+GXEE8P
+Sonic Riders
+
+
+Skip savefile checksum (safe)
+217b44c0 01010000
+017b44c1 00000000
+e0000000 80008000
+
+Skip savefile checksum (always enabled)
+017b44c1 00000000
+
+Force language to English (for JP version GXEJ8P)
+0021bba7 00000001
+
+Start in English
+2022CBCC 80016874
+0021BBA7 00000001
+E0000000 80008000
+
+Start in Spanish
+2022CBCC 80016874
+0021BBA7 00000004
+E0000000 80008000
