@@ -6,11 +6,27 @@ No Deflicker
 06241592 00000007
 00001516 15000000
 
-Force 2P costume on P2
-02256036 00000001
+VI scale to 704 (1:1 PAR on real hardware)
+2824156e 00000280
+0224156e 000002c0
+0224156a 00000008
+e0000000 80008000
 
 Force 2P costume on P1
 02255fce 00000001
+
+Force 2P costume on P2
+02256036 00000001
+
+Press Y+A to force P2 costumes on P1
+282469de 00000900
+00255fcf 00000001
+e0000000 80008000
+
+Press Y+A to force P2 costumes on P2
+28246ac6 00000900
+00256037 00000001
+e0000000 80008000
 
 P1 character loader by pressing Z
 28246a4e 00000010
@@ -18,12 +34,12 @@ P1 character loader by pressing Z
 de000000 80008180
 58010000 00000068
 de000000 80008180
-1200000e 0000000c
+1200000e 0000000C
 12000116 00000001
 e0000000 80008000
 
 
-To force a character change line 6, to enable Laila2/Milordo-Z use line 7 = 00000001
+To force a character change line 6 (0000000C = Maestro), to enable Laila2/Milordo-Z use line 7, 00000001 = enabled
 0x00 = Kanchome
 0x01 = Kido
 0x02 = Tia
