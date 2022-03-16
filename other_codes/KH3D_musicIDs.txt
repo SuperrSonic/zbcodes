@@ -1,0 +1,28 @@
+000400000008D300
+
+
+bgm_001.bcstm = Traverse in Trance
+bgm_002.bcstm = Three Musks
+bgm_003.bcstm = Prankster's Paradise
+bgm_004.bcstm = Monstro/A Very Small Wish
+bgm_009.bcstm = Cite de cloches
+bgm_010.bcstm = What now
+bgm_011.bcstm = The Grid
+bgm_012.bcstm = Sacred Distance
+bgm_013.bcstm = Sacred Moon
+bgm_014.bcstm = Traverse Battle
+bgm_015.bcstm = Unknown
+bgm_016.bcstm = Prankster's Battle
+bgm_017.bcstm = Monstrous Battle
+bgm_018.bcstm = Notre Dame Battle (maybe?)
+bgm_020.bcstm = The Grid Battle
+bgm_021.bcstm = Lightcycles
+bgm_022.bcstm = Deep dive
+bgm_023.bcstm = Majestic Wings
+bgm_024.bcstm = Mini-boss
+bgm_025.bcstm = Dream dive
+bgm_026.bcstm = Unk
+bgm_027.bcstm = Heartless amok
+bgm_028.bcstm = Darkforce
+bgm_029.bcstm = Unk, violins amok
+bgm_030.bcstm = Unk, sounds dark though
