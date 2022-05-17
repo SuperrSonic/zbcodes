@@ -12,6 +12,9 @@ VI scale to 704 (1:1 PAR on real hardware)
 0224156a 00000008
 e0000000 80008000
 
+Infinite Card Shop points
+04255ba4 0000270f
+
 Force 2P costume on P1
 02255fce 00000001
 
