@@ -12,6 +12,9 @@ VI Scale 704 (1:1 PAR on console)
 022A59AA 00000008
 e0000000 80008000
 
+Infinite Card Shop points
+042b9a0c 0000270f
+
 One-hit beat P1
 48000000 80296f28
 de000000 80008180
