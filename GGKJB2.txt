@@ -12,6 +12,9 @@ VI scale to 704 (1:1 PAR on real hardware)
 0225EEAA 00000008
 e0000000 80008000
 
+Infinite Card Shop points
+042e2068 0000270f
+
 Press Y+A on port 1 to use P2 costume on P1
 2826435e 00000900
 02273d98 00000001
