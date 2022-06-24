@@ -1,0 +1,47 @@
+GSOE8P
+Sonic Mega Collection
+
+
+Unlock Blue Sphere with a Sonic DX save
+282AD6A8 00003E3E
+062AD6A8 0000001F
+534F4E49 43414456
+454E5455 52455F44
+585F504C 41595245
+434F5244 5F310000
+e0000000 80008000
+282AC6F0 00008024
+042AC6F0 802AD6A8
+e0000000 80008000
+
+Change text for Game Title to Game Reset
+062406C8 0000000A
+47616D65 20526573
+65740000 00000000
+
+Play all games 50 times
+062F90A0 0000000C
+32323232 32323232
+32323232 00000000
+//this sets the playtimes to max, it prevents the game from writing to the memcard when starting them.
+
+Turn off page counter and black BG (Extras)
+0069754b 00000000
+
+Turn off page counter and black BG (Manuals)
+006959CB 00000000
+
+Turn off page counter and black BG (Games)
+00696E0B 00000000
+
+No Deflicker
+282B1CB2 00000808
+062B1CB2 00000007
+00001516 15000000
+e0000000 80008000
+
+VI scale to 704
+282B1C8E 00000280
+022B1C8E 000002C0
+002B1C8B 00000008
+e0000000 80008000
