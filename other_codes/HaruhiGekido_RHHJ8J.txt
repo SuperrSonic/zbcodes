@@ -2,6 +2,16 @@ RHHJ8J
 Haruhi Suzumiya no Gekido
 
 
+No Deflicker
+063EAAF2 00000007
+00001516 15000000
+
+Patch VI width to 704
+023EAACE 000002C0
+023EAACA 00000008
+//game doesn't scale horizontally regardless of aspect ratio
+//if you enable this, you can get rid of black bars on the sides, noticeable on HDTVs and capture cards
+
 Unlock all items
 070d3809 00000036
 01010101 01010101
@@ -46,6 +56,7 @@ e0000000 80008000
 003847e2 0000004c
 043847e8 5f303031
 e0000000 80008000
+//this allows the game to load unused item 55 and 56
 
 Patch savefile title/comment (The Excitement of Haruhi) (Everyday choreography action!)
 2B0E8E8E 00000069
@@ -67,14 +78,7 @@ Patch savefile title/comment (The Excitement of Haruhi) (Everyday choreography a
 00740069 006f006e
 00210000 00000000
 e0000000 80008000
-//pointer unknown workaround
-
-Patch "Stop the lesson" message
-2924875e 00007200
-0124875f 00000065
-05248760 656e3f00
-e0000000 80008000
-//pointer unknown workaround
+//pointer unknown, workaround
 
 Always max life
 053c402c 41000000
