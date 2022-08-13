@@ -12,6 +12,15 @@ Patch VI width to 704
 //game doesn't scale horizontally regardless of aspect ratio
 //if you enable this, you can get rid of black bars on the sides, noticeable on HDTVs and capture cards
 
+Scale opening thp from 448 to 480 to fix scale
+21078FB0 000001c0
+03078FB2 000001e0
+03078FAA 0000fff0
+e0000000 80008000
+//Because the game only renders 448 lines, the video will be cropped
+//but will display in a perfect 1x scale on both 4:3 and 16:9 modes
+//TODO: test on real Wii, and test ending video
+
 Unlock all items
 070d3809 00000036
 01010101 01010101
