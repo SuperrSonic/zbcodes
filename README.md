@@ -8,7 +8,7 @@ Supported codes:
 - Zatch Bell! Mamodo Battles
 - Konjiki no Gash Bell!! Yujo Tag Battle Full Power
 - Konjiki no Gash Bell!! Yujo Tag Battle 2
-- (COMING SOON) Konjiki no Gash Bell!! Go! Go! Mamono Fight!!
+- Konjiki no Gash Bell!! Go! Go! Mamono Fight!!
 
 
 Screenshots:
