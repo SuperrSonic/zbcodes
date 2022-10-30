@@ -666,7 +666,7 @@ Reset alt chars by pressing Y+Z
 022134BE 00002020
 e0000000 80008000
 
-Hold Z to load alt stage (Real Hardware safe)
+Hold Z to load alt stage (old)
 2053de74 07000101
 2053dd70 00000000
 2853ddae 00000000
@@ -780,6 +780,21 @@ e0000000 80008000
 001A2BF3 00000017
 001A2BF7 00000027
 e0000000 80008000
+//This is the preferred stage loader code.
+//River Bed                  = Sunset River Bed
+//Botanical Garden           = Maruss Level 2 (Concert Auditorium)
+//Park                       = Maruss Level 1 (Concert Aud. alt)
+//Abandoned Building         = Vacant Lot (Kido Level 1)
+//Roof of Abandoned building = Ruins 1 (Victoream Level 1)
+//Schoolyard                 = Ruins 2 (Laila Level)
+//Cold Storage Warehouse     = Ruins 3 (Tsao-lon Level)
+//Meadow                     = Ruins 4 (Demolt Level)
+//Quarry                     = Ruins 5 (Pamoon Level 2)
+//Forest                     = Forest at Night
+//Abandoned Factory          = Outside Abandoned Factory (Bari Level 2)
+//Front of Windmill          = Castle (This isn't 0x0F used by Suzy's or Arcade Mode, but an unused value.)
+//L+R Level isn't replaced but can be, by adding 001A2BFB 000000?? to the replace list (starting on line 5 and line 16
+//and adding 001A2BFB 00000029 to the reset list. Lines that start with 0 are writes, lines that start with 2 are conditions.
 
 VSmode - no S spell P1 P2 and infinite time
 282134e0 00004c20
