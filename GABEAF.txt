@@ -370,6 +370,17 @@ e0000000 80008000
 0423e44c 00000000
 e0000000 80008000
 
+//Alt Character List
+//Fein      = Zofis
+//Robnos 2  = Robnos 1
+//Kido      = Belgim E.O
+//Tia       = Penny
+//Kanchome  = Byonko
+//Hyde      = Pamoon (spells only damage P1, stars only works in "Ruins 5" Pamoon Level 2)
+//Ponygon   = Demolt (unsed data by the game)
+//Wonrei    = Tsao-lon (spells only damage P1)
+//Victoream = Laila
+
 Alt Y+L alt char P1
 285e050c 00000840
 022134c0 00002021
