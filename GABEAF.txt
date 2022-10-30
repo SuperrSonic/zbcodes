@@ -2480,3 +2480,106 @@ Nonsense write32 fill TYPE 1
 04211BF4 22445566
 04211BF8 22445566
 04211BFC 22445566
+//These nonsense write are to test FPS performance in nintendont
+//it seems it doesn't matter what the code does, simply scanning for a large code
+//will drop the framerate heavily. However, if the codes are adapted for nintendont
+//making the conditionals work on the padread emulation and the static codes only apply at start
+//it's possible to maximize performance. Even without codes the Wii boost isn't enough to maintain 30 fps in some levels.
+
+
+//Character ID list
+0x00 = Zatch
+0x01 = Reycom
+0x02 = Sugino
+0x03 = Kolulu
+0x04 = Fein
+0x05 = Eshros
+0x06 = Robnos 1
+0x07 = Robnos 2
+0x08 = Maruss
+0x09 = Brago
+0x0A = Rops
+0x0B = Baransha
+0x0C = Bari
+0x0D = Kido
+0x0E = Zeno
+0x0F = Tia
+0x10 = Kanchome
+0x11 = Hyde
+0x12 = Ponygon
+0x13 = Wonrei
+0x14 = Tsao-lon
+0x15 = Belgim E.O.
+0x16 = Pamoon
+0x17 = Demolt (this ID isn't used by the game, the boss fight is made differently)
+0x18 = Zofis
+0x19 = Penny
+0x1A = Byonko
+0x1B = Laila
+0x1C = Victoream
+
+//Stage ID list
+0x01 = Reycom Level 1
+0x02 = Reycom Level 2 - Sunset River Bed
+0x03 = Sugino Level 1
+0x04 = Sugino Level 2
+0x05 = Kolulu Level 1
+0x06 = Kolulu Level 2
+0x07 = Fein Level 1
+0x08 = Fein Level 2
+0x09 = Eshros Level 1
+0x0A = Eshros Level 2
+0x0B = Robnos Level 1
+0x0C = Robnos Level 2
+0x0D = Maruss Level 1
+0x0E = Maruss Level 2
+0x0F = Baltro Level 1
+0x10 = Baltro Level 2
+0x11 = Brago Level 1
+0x12 = Brago Level 2
+0x13 = Rops Level 1
+0x14 = Rops Level 2
+0x15 = Baransha Level 1
+0x16 = Baransha Level 2 - Forest at Night
+0x17 = Bari Level 1
+0x18 = Bari Level 2
+0x19 = Kido Level 1
+0x1A = Kido Level 2
+0x1B = Penny Level
+0x1C = Byonko Level
+0x1D = Victoream Level 1
+0x1E = Victoream Level 2
+0x1F = Laila Level
+0x20 = Tsao-lon Level
+0x21 = Belgim E.O. Level
+0x22 = Pamoon Level 1
+0x23 = Pamoon Level 2
+0x24 = Demolt Level
+0x25 = Zofis Level 1
+0x26 = Zofis Level 2
+0x27 = Zeno Level 1
+0x28 = Zeno Level 2
+0x29 = Faudo Level
+0x2A = crash
+0x2B = crash
+0x2C = crash
+0x2D = crash
+0x2E = Arcade Mode's Castle //BGM 25
+0x2F = jumps to opening, returns to CSS.
+0x30 = return to selection.
+0x31 = jump to arcade mode intro then back to selection.
+0x32 = crash
+0x38 = Suzy's Castle, loops loading, tries to load file ".mdl" which doesn't exist.
+0x39 = jumps to op
+0x3A = the volcan fam grave for volcan gen 2 and on.
+0x3B = let's play with ponygon
+0x3C = Gather Sweets
+0x3D = Save Volcan!
+0x3E = Ride Ponygon
+0x3F = Save Volcan 2 Naomi's in car
+0x40 = Sneak into the hall
+0x41 = Burn the spell book (4P mode, works as single player, every player is Zatch)
+0x42 = Yellowtail Snatch - same as above
+0x43 = crash
+0x44 = crash
+0x45 = crash
