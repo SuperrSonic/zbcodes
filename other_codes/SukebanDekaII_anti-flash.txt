@@ -1,0 +1,3 @@
+0x889:   #title flashing
+
+Red = 0x03, White = 0x3F, Black = 0x00
