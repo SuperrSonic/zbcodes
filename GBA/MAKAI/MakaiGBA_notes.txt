@@ -1,0 +1,541 @@
+~ Makai no Bookmark notes ~
+
+Font is lower than 4bpp, by changing the dialogue in the intro it's possible to
+jump straight into the tile data by looking at RAM address 0x2005ea8 on the frame
+that the character appears on-screen. After copying that data and searching for it with
+a hex editor it should find it only once on the ROM unless there are copies.
+Then you can copy the offset and go to it on a tile editor.
+That's how I found the main font.
+
+The main script is compressed.
+This tool (LZ77 Restructor 2) can find the compressed text or graphics: https://www.romhacking.net/utilities/973/
+
+These addresses are all found to have pointers followed by text, the filesize
+of the compressed data is next to each address.
+
+0x612098 : 0x1831
+0x6138CC : 0x1129
+0x6149F8 : 0x1980
+0x616378 : 0x1126
+0x6174A0 : 0x15CC
+0x618A6C : 0x0EFB
+0x619968 : 0x1212
+0x61AB7C : 0x10F5
+0x61BC74 : 0x1497
+0x61D10C : 0x1712
+0x61E820 : 0x1279
+0x61FA9C : 0x0EDD
+0x62097C : 0x1C78
+0x6225F4 : 0x18EC
+0x623EE0 : 0x03AC
+0x62428C : 0x02F2
+0x624580 : 0x0347
+0x6248C8 : 0x03FB
+0x624CC4 : 0x0473
+0x625138 : 0x0166
+0x6252A0 : 0x0251
+0x6254F4 : 0x025D
+0x625754 : 0x048F
+0x625BE4 : 0x05CA
+0x6261B0 : 0x03CA
+0x62657C : 0x05E3
+0x626B60 : 0x0111
+0x626C74 : 0x012B
+0x626DA0 : 0x071E
+0x6274C0 : 0x0EC5
+0x628388 : 0x079B
+0x628B24 : 0x21A8
+0x62ACD0 : 0x0844
+
+These compressed chunks of the script have pointers TO them.
+Example, ROM address 0x2923AC points to 086138CC (CC386108) 08 being the mem
+mapping of the GBA.
+
+It's possible to edit this to a different location like 0x7DA100, so write 00A17D08
+And the compress the edited script in this case the one for the script at 0x6138CC
+Then the game should show the new replaced text.
+
+LZ type is the first byte of the compressed data, Makai only uses 0x10
+The tool here can compress it.
+https://www.romhacking.net/utilities/789/
+DSDecmp -c lz10 test.bin test.lz
+Gives the same compression used by the game. (Though, it doesn't produce identical results.)
+
+
+
+
+There are several pointer/text tables uncompressed, through.
+
+For example, 0x60DE90 is the start of character names.
+Kiyomaro = 8153 8154
+Gash     = 809E 80B5 80A9 80D7
+Tio      = 80B8 8094 809C
+Folgore  = 80C7 809B 80DD 80A6 80DE
+Kanchome = 809F 80D5 80E5 80B3 80D9 80D3 8155
+Sherry   = 80A9 8099 80DC 80EA
+etc.
+
+
+Highlighters, they can be added before any text to change outline color.
+They can be modified to fully change the palette.
+254932 = white outline, black text
+254933 = blue outline
+254934 = blue text, white outline
+254935 = red outline
+254936 = red text, white outline
+254937 = green outline
+254938 = green text, white outline
+254939 = orange outline
+25493A = crash
+
+0x62B510 //main font start
+0x62B7E0 = T
+
+0x62BF34 = 0x16 bytes = の
+lower bpp, try gameboy 2bpp
+
+
+0x60E930 = CHODAI HIT
+
+Need to not confuse chikara kanji 力 with katakana.
+
+
+Sonic = 801D 8033 8032 802D 8027 8000
+
+254E = linebreak
+8000 = SPACE
+8001 = 0
+8002 = 1
+8003 = 2
+8004 = 3
+8005 = 4
+8006 = 5
+8007 = 6
+8008 = 7
+8009 = 8
+800A = 9
+800B = A
+800C = B
+800D = C
+800E = D
+800F = E
+8010 = F
+8011 = G
+8012 = H
+8013 = I
+8014 = J
+8015 = K
+8016 = L
+8017 = M
+8018 = N
+8019 = O
+801A = P
+801B = Q
+801C = R
+801D = S
+801E = T
+801F = U
+8020 = V
+8021 = W
+8022 = X
+8023 = Y
+8024 = Z
+8025 = a
+8026 = b
+8027 = c
+8028 = d
+8029 = e
+802A = f
+802B = g
+802C = h
+802D = i
+802E = j
+802F = k
+8030 = l
+8031 = m
+8032 = n
+8033 = o
+8034 = p
+8035 = q
+8036 = r
+8037 = s
+8038 = t
+8039 = u
+803A = v
+803B = w
+803C = x
+803D = y
+803E = z
+803F = ぁ
+8040 = あ
+8041 = ぃ
+8042 = い
+8043 = ぅ
+8044 = う
+8045 = ぇ
+8046 = え
+8047 = ぉ
+8048 = お
+8049 = か
+804A = が
+804B = き
+804C = ぎ
+804D = く
+804E = ぐ
+804F = け
+8050 = げ
+8051 = こ
+8052 = ご
+8053 = さ
+8054 = ざ
+8055 = し
+8056 = じ
+8057 = す
+8058 = ず
+8059 = せ
+805A = ぜ
+805B = そ
+805C = ぞ
+805D = た
+805E = だ
+805F = ち
+8060 = ぢ
+8061 = っ
+8062 = つ
+8063 = づ
+8064 = て
+8065 = で
+8066 = と
+8067 = ど
+8068 = な
+8069 = に
+806A = ぬ
+806B = ね
+806C = の
+806D = は
+806E = ば
+806F = ぱ
+8070 = ひ
+8071 = び
+8072 = ぴ
+8073 = ふ
+8074 = ぶ
+8075 = ぷ
+8076 = へ
+8077 = べ
+8078 = ぺ
+8079 = ほ
+807A = ぼ
+807B = ぽ
+807C = ま
+807D = み
+807E = む
+807F = め
+8080 = も
+8081 = ゃ
+8082 = や
+8083 = ゅ
+8084 = ゆ
+8085 = ょ
+8086 = よ
+8087 = ら
+8088 = り
+8089 = る
+808A = れ
+808B = ろ
+808C = ゎ
+808D = わ
+808E = ゐ
+808F = ゑ
+8090 = を
+8091 = ん
+8092 = ァ
+8093 = ア
+8094 = ィ
+8095 = イ
+8096 = ゥ
+8097 = ウ
+8098 = ヴ
+8099 = ェ
+809A = エ
+809B = ォ
+809C = オ
+809D = カ
+809E = ガ
+809F = キ
+80A0 = ギ
+80A1 = ク
+80A2 = グ
+80A3 = ケ
+80A4 = ゲ
+80A5 = コ
+80A6 = ゴ
+80A7 = サ
+80A8 = ザ
+80A9 = シ
+80AA = ジ
+80AB = ス
+80AC = ズ
+80AD = セ
+80AE = ゼ
+80AF = ソ (or ン)
+80B0 = ゾ
+80B1 = タ
+80B2 = ダ
+80B3 = チ
+80B4 = ヂ
+80B5 = ッ
+80B6 = ツ
+80B7 = ヅ
+80B8 = テ
+80B9 = デ
+80BA = ト
+80BB = ド
+80BC = ナ
+80BD = ニ
+80BE = ヌ
+80BF = ネ
+80C0 = ノ
+80C1 = ハ
+80C2 = バ
+80C3 = パ
+80C4 = ヒ
+80C5 = ビ
+80C6 = ピ
+80C7 = フ
+80C8 = ブ
+80C9 = プ
+80CA = ヘ
+80CB = ベ
+80CC = ペ
+80CD = ホ
+80CE = ボ
+80CF = ポ
+80D0 = マ
+80D1 = ミ
+80D2 = ム
+80D3 = メ
+80D4 = モ
+80D5 = ャ
+80D6 = ヤ
+80D7 = ュ
+80D8 = ユ
+80D9 = ョ
+80DA = ヨ
+80DB = ラ
+80DC = リ
+80DD = ル
+80DE = レ
+80DF = ロ
+80E0 = ヮ
+80E1 = ワ
+80E2 = ヰ
+80E3 = ヱ
+80E4 = ヲ
+80E5 = ン
+80E6 = ヵ
+80E7 = ヶ
+80E8 = ？
+80E9 = ！
+80EA = ー
+80EB = 一
+80EC = ゛
+80ED = ゜
+80EE = ＜
+80EF = |
+80F0 = _
+80F1 = 、
+80F2 = 。
+80F3 = ,
+80F4 = ．
+80F5 = ・
+80F6 = ：
+80F7 = ；
+80F8 = 〞
+80F9 = 〝
+80FA = ﮴
+80FB = ＾
+80FC = ‾
+80FD = ヽ
+80FE = ヾ
+80FF = ゝ
+8100 = ゞ
+8101 = 〃
+8102 = 全
+8103 = 々
+8104 = 〆
+8105 = 〇
+8106 = －
+8107 = ／
+8108 = ＼
+8109 = ～
+810A = ‖
+810B = ⋯
+810C = ‥ (it's in the middle)
+810D = ' (right, for start)
+810E = ' (left, for close)
+810F = both ' Possibly unused.
+8110 = SPACE
+8111 = （
+8112 = ）
+8113 = SPACE
+8114 = SPACE
+8115 = SPACE
+8116 = SPACE
+8117 = SPACE
+8118 = ｝
+8119 = 〈
+811A = 〉
+811B = 《
+811C = 》
+811D = 「
+811E = 」
+811F = 『
+8120 = 』
+8121 = 【
+8122 = 】
+8123 = ＋
+8124 = －
+8125 = ±
+8126 = ×
+8127 = ÷
+8128 = =
+8129 = ≠
+812A = ＞
+812B = ≦
+812C = ≧
+812D = ∞
+812E = three dots forming pyramid
+812F = ♂
+8130 = ♀
+8131 = handakuten again?
+8132 = ʼ
+8133 = ˮ
+8134 = ℃
+8135 = ￥
+8136 = ＄
+8137 = ¢
+8138 = ￡
+8139 = ％
+813A = ＃
+813B = ＆
+813C = ＊
+813D = ＠
+813E = vertical double s
+813F = ✰ //transparent star
+8140 = ☆ //white star
+8141 = 〇 //seikai
+8142 = ○
+8143 = ⌾
+8144 = ◆ //actually transparent
+8145 = ◇
+8146 = ■ //actually transparent
+8147 = □
+8148 = ▲ //actually transparent
+8149 = △
+814A = ▼ //actually transparent
+814B = ▽
+814C = ※
+814D = 〒
+814E = →
+814F = ←
+8150 = ↑
+8151 = ↓
+8152 = ＝ //thicker
+
+//kanji nightmare
+8153 = 清
+8154 = 麿
+8155 = 恵
+8156 = 博
+8157 = 土
+8158 = 神
+8159 = 
+815A = 
+
+
+817B = 
+819E = 
+819F = 
+
+8256 = 
+82CF = 
+
+//halfwidth/thin characters
+E000 = SPACE //halfwidth
+E001 = 0
+E002 = 1
+E003 = 2
+E004 = 3
+E005 = 4
+E006 = 5
+E007 = 6
+E008 = 7
+E009 = 8
+E00A = 9
+E00B = ?
+E00C = ひ
+E00D = ら
+E00E = が //unsure, could be ガ
+E00F = な
+E010 = カ
+E011 = タ
+E012 = ナ
+E013 = A
+E014 = B
+E015 = C
+E016 = も
+E017 = ど
+E018 = る
+E019 = け
+E01A = っ
+E01B = て
+E01C = い
+E01D = R
+E01E = O
+E01F = M
+E020 = ]
+E021 = ソ //unsure
+E022 = プ
+E023 = リ
+E024 = -
+E025 = ト
+E026 = :
+E027 = %
+E028 = .
+E029 = H
+E02A = I
+E02B = T
+E02C = x
+E02D = - //same as E024?
+E02E = ア
+E02F = ク
+E030 = シ
+E031 = ヨ //or the smaller ョ
+E032 = 【
+E033 = 】
+E034 = ス
+E035 = ラ
+E036 = ィ
+E037 = ル
+E038 = ザ
+E039 = ク
+E03A = ガ
+E03B = キ
+E03C = ヤ //or ャ
+E03D = チ
+E03E = メ
+E03F = ピ
+E040 = ド
+E041 = ワ
+E042 = バ
+E043 = イ
+E044 = べ
+E045 = idk, it's a tiny t
+E046 = x (tiny, top)
+E047 = g (same but glitchy)
+E048 = ｢
+E049 = SPACE
+E04A = SPACE
+E04B = SPACE
+E0FF = borked
