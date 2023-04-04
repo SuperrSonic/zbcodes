@@ -47,6 +47,9 @@ of the compressed data is next to each address.
 0x628B24 : 0x21A8
 0x62ACD0 : 0x0844
 
+There is a total of 0x25F40 bytes free in the ROM.
+Every compressed chunk is 0x19441, if every compressed script is moved, there should be more than enough space for the other scripts.
+
 These compressed chunks of the script have pointers TO them.
 Example, ROM address 0x2923AC points to 086138CC (CC386108) 08 being the mem
 mapping of the GBA.
@@ -59,7 +62,6 @@ LZ type is the first byte of the compressed data, Makai only uses type 0x10
 The tool here can compress it: https://www.romhacking.net/utilities/789/
 DSDecmp -c lz10 file.bin file.lz
 Gives the same compression used by the game. (Though, it doesn't produce identical results.)
-
 
 
 There are several pointer/text tables uncompressed, though.
