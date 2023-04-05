@@ -455,6 +455,11 @@ Sonic = 801D 8033 8032 802D 8027 8000
 8256 = 
 82CF = 
 
+//crystaltile2
+//0x632737, width 8, height 6, gb 2bpp
+//Halfwidth can use up to 16 characters for names
+//and 22 characters per dialogue lines.
+
 //halfwidth/thin characters
 E000 = SPACE
 E001 = 0
@@ -532,4 +537,13 @@ E048 = ｢
 E049 = SPACE
 E04A = SPACE
 E04B = SPACE
+E04C = SPACE
+E04D = SPACE
+E04E = SPACE
+E04F = SPACE
+E050 = SPACE
+E051 = SPACE
+E052 = has unk data
 E0FF = borked
+
+//E049 through E051 are mapped uniquely and can be used to insert new characters.
