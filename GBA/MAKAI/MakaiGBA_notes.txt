@@ -77,6 +77,7 @@ etc.
 
 
 Highlighters, they can be added before any text to change outline color.
+254931 = restore to white text, black outline
 254932 = white outline, black text
 254933 = blue outline
 254934 = blue text, white outline
