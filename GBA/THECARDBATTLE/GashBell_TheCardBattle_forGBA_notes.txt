@@ -1,0 +1,39 @@
+Gash The Card Battle for GBA
+
+0x2F = linebreak
+0x20 = halfwidth space
+
+Rest is shift-jis, though numbers can be written in ascii too.
+No missing glyphs for English except characters like é.
+
+In-game tutorial sections have a different character set,
+but seems to have the same amount of glyphs.
+
+0x433? is for color codes. C4, C7 are commonly used.
+C1 = black/restore
+C2 = gray
+C3 = light gray
+C4 = blue
+C5 = light blue
+C6 = lighter blue
+C7 = red
+C8 = light red
+C9 = lighter red
+CA = glitchy 1
+CB = glitchy 2
+
+0x8DD900 = pointer location 60DB8D08
+0x8DDB60 = original text location, Kiyomaro-!
+
+B0D98D08
+
+
+Currently there's no way to expand the amount of textboxes.
+And with only two lines of 14 characters, there's not much space
+visually to write proper translations.
+
+However the "tutorial" dialogue sections can have up to 5 lines.
+These lines can be adjusted by the linebreak code.
+So for these it should be possible to fit in all text necessary.
+
+The ROM has data at the end and there's no indication of having empty space to repoint text.
