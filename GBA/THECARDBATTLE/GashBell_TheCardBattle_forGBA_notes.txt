@@ -1,4 +1,5 @@
-Gash The Card Battle for GBA
+~ Konjiki no Gash Bell!! The Card Battle for GBA ~ Translation Notes
+
 
 0x2F = linebreak
 0x20 = halfwidth space
@@ -23,9 +24,9 @@ CA = glitchy 1
 CB = glitchy 2
 
 0x8DD900 = pointer location 60DB8D08
-0x8DDB60 = original text location, Kiyomaro-!
+0x8DDB60 = original text location for "Kiyomaro-!"
 
-B0D98D08
+B0D98D08 = just a random pointer
 
 
 Currently there's no way to expand the amount of textboxes.
