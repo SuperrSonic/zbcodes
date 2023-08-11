@@ -84,7 +84,7 @@ e0000000 80008000
 00452c34 00000001
 e0000000 80008000
 
-Hold Y on bootup to change audio to Japanese(+cutscenes)
+Hold Y on bootup to change audio to Japanese(+FMV)
 28452a80 00005345
 2829c1d4 00000800
 202538a0 5f452e6d
@@ -119,10 +119,15 @@ e0000000 80008000
 00452c34 00000000
 e0000000 80008000
 
-Always use Japanese audio
-28452a80 00005345
-202538a0 5f452e6d
+Always JP audio
+00452c34 00000000
 042538a0 5f4a2e6d
+06255058 00000012
+74657874 75726573
+2f653341 64762e74
+78640000 00000000
+
+Always JP FMV
 0028cab0 00000057
 0028cac0 00000057
 0028cad0 00000057
@@ -143,15 +148,15 @@ Always use Japanese audio
 0028cbc0 00000057
 0028cbd0 00000057
 0028cbf0 00000057
-20255058 53485f56
-06255058 00000012
-74657874 75726573
-2f653341 64762e74
-78640000 00000000
-e0000000 80008000
-202538a0 5f4a2e6d
-00452c34 00000000
-e0000000 80008000
+
+Force English timing (affects roll call)
+00452c34 00000001
+//this is an unused setting (next value is rumble bool)
+//the game never saves it though,
+//so if you created a save on the NTSC-J build
+//and then edit the header to make other builds load it,
+//every team's roll call will be timed incorrectly.
+//Unknown if this affects anything else, but it's likely.
 
 60FPS in 2P Mode [from Dolphin wiki]
 0401AC24 48000008
