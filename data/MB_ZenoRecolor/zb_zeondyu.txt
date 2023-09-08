@@ -1,0 +1,6 @@
+Zeon = 0000.fpk
+first texture = face df 128x 16 colors CI4, mipmap level 6 - 0x10
+tex1 = body 256x CI8 256 colors
+
+Dufo = 0000.fpk
+tex2 = hair 256x CI8 256 colors
