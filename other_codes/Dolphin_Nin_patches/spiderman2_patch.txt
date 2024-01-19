@@ -1,0 +1,17 @@
+#Spider-Man 2 (NTSC-U)
+DEFAULT:
+
+volume(255)
+#mcdDelay(0)
+
+#Remove splash screen videos
+poke(8046DD20, 5F5F5F5F)
+poke(8046DD2C, 5F5F5F5F)
+
+#If arcade mode is OFF pokes after this are skipped
+triArcade(1)
+
+#Remove voices
+#This speeds up missions as it skips the talking scenes
+#Some but not all grunts are kept
+poke(80468958, 5F5F5F5F)
