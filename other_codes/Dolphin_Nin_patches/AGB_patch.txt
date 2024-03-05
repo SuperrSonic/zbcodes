@@ -7,7 +7,7 @@ wiiChan(1)
 #noTrapFilter(1)
 
 #Remove all video patches, some loaders will force video no matter what
-noVidpatch(1)
+#noVidpatch(1)
 
 #Adjust AVE-RVL volume from 1 to 255
 #volume(255)
@@ -17,7 +17,7 @@ noVidpatch(1)
 
 #Set a custom title for message board, if arg 3 starts with 0 it's unused
 #Both arg 2 and 3 have a limit of 21 characters
-#writePlaylog(1, Sonic_Heroes , 0 )
+#writePlaylog(1, Final_Fantasy_IV , 0 )
 
 #Allows using special characters, can use 0x20 for spaces
 #hexPlaylog(1, 466972E9, 20456D62, 6C656D0A, 50617468, 206F6620, 52616421, 0, 0, 0, 0)
@@ -26,13 +26,13 @@ noVidpatch(1)
 #rand(802406CC, 31, 3f, 1, 20546974)
 
 #VI width 333
-poke(80005A70, 38C0014D)
+#poke(80005A70, 38C0014D)
 
 #FB width 304
-poke(80005A48, 39200130)
+#poke(80005A48, 39200130)
 
 #x pos 720 - 333 / 2
-poke(80005A5C, 38A001F6)
+#poke(80005A5C, 38A001F6)
 
 #efb and xfb height
 #poke(80005A50, 38E00224)
