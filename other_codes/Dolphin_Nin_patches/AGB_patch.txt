@@ -1,0 +1,53 @@
+#AGB Emulator
+DEFAULT:
+
+#Make the first wii remote P1
+wiiChan(1)
+
+#noTrapFilter(1)
+
+#Remove all video patches, some loaders will force video no matter what
+noVidpatch(1)
+
+#Adjust AVE-RVL volume from 1 to 255
+#volume(255)
+
+#Force IPL boot jingle, 1 is baby, 2 is kabuki, higher is random
+#iplJingle(2)
+
+#Set a custom title for message board, if arg 3 starts with 0 it's unused
+#Both arg 2 and 3 have a limit of 21 characters
+#writePlaylog(1, Sonic_Heroes , 0 )
+
+#Allows using special characters, can use 0x20 for spaces
+#hexPlaylog(1, 466972E9, 20456D62, 6C656D0A, 50617468, 206F6620, 52616421, 0, 0, 0, 0)
+
+#Testing random on u8 with initial value, works
+#rand(802406CC, 31, 3f, 1, 20546974)
+
+#VI width 333
+poke(80005A70, 38C0014D)
+
+#FB width 304
+poke(80005A48, 39200130)
+
+#x pos 720 - 333 / 2
+poke(80005A5C, 38A001F6)
+
+#efb and xfb height
+#poke(80005A50, 38E00224)
+
+#y pos 480 - 224 / 2
+#poke(80005A60, 38800080)
+
+#240p
+#poke(8006EFC0, 00000001)
+#poke(8006EFD4, 00000000)
+#poke(80005B20, 3800003C)
+
+
+
+#Change 'Game Title' to 'Game Reset'
+GSOE8P:
+poke(802406CC, 20526573)
+poke(802406D0, 65740000)
