@@ -1,0 +1,2 @@
+FFVI Advance (U) - Skip health screen - Some emulators don't display this right
+ROM address 0x135DB4 = 00000000
