@@ -2,6 +2,24 @@ WRXE08
 MEGA MAN 10
 
 
+Remove bilinear filter in widescreen mode
+04020fa8 38000000
+
+Game width value
+04021E04 38800280 // 640, adjusting this to 512 makes the game pixel-perfect,
+but in 16:9 you should use 029A because of the correction applied by the game.
+The only way to support both aspect ratios as pixel-perfect, is to either force 4:3 all the time,
+or inject code to make the game decide from reading the SYSCONF.
+
+Example ASM skip for setting widescreen bool
+0401f014 60000000
+// This makes the game always start in 4:3
+// The only difference between this and the one below
+// is that this one can be applied to the uncomp dol directly at 0x014194.
+
+Game height value
+04021E0C 38A001E0 // 480
+
 Force detect 4:3 mode (Avoids bilinear filter)
 2867C9F0 00000100
 0067c9f0 00000000
@@ -18,7 +36,7 @@ e0000000 80008000
 00327d4f 00000000
 e0000000 80008000
 
-NES VC dim
+NES VC style dim
 06327d6a 00000007
 00001500 15000000
 
