@@ -1,0 +1,10 @@
+- Sonic Pinball Party -
+
+In low accuracy emulators, resuming arcade mode after a fresh boot hangs the game
+for around 2 minutes. It hangs on a loop that's supposed to set some values to 0.
+
+Skipping this loop, the game resumes correctly and I couldn't notice any wrong behavior.
+
+More testing is needed, there is potential to branch here.
+
+(US ROM) at 0x459B = 0xD1 change it to 0xDB to return.
