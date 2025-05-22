@@ -1,0 +1,22 @@
+- Sonic Advance 3 -
+
+The vertical line glitch is a visual bug that happens during the normal ending scene.
+
+The white glow beams that alternate left and right will sometimes appear as a straight line
+from top to bottom of the screen if there's some timing mismatch in the hardware.
+
+As such it only happens in certain emulators and things like GBARunner2.
+
+See: https://github.com/mgba-emu/mgba/issues/503
+
+I've made a patch that hides the line effect to solve the issue.
+
+Search for these bytes in any version of the ROM:
+0028 0AD0 3002 3C1C 0019
+
+Or go to 0xA70B2 in the US ROM, 0xA743A in the EU ROM, or 0xA742E in the JP ROM.
+
+Then replace them with: 0000 0048 0000 00F00000
+This is an instruction replacement that loads the value 0xF000 into r0.
+
+Since it overwrites the conditions for the x postion of the beams it goes directly to the str code.
