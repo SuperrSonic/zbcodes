@@ -1,0 +1,18 @@
+- Sonic Battle -
+
+
+Increase limit of gained Skill Points from 500 to 800.
+JP ROM:
+0x44DE4 = C820 8000
+
+
+No checksum, this is tricky because save is initialized as 0xFF, so if the game
+loads the save as 0x1000 0xFFs it will just break. Instead, the checksum function
+which is only used twice in the code, always returns 0xFEFFFFFF.
+
+JP ROM:
+0x219C8 = 12E0 //branch to exit makes checksum always 0xFEFFFFFF
+
+No save encryption
+0x218D0 = 00000000 //de-mangling
+0x217A0 = 00000000 //mangling
