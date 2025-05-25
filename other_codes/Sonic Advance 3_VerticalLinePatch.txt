@@ -18,5 +18,12 @@ Or go to 0xA70B2 in the US ROM, 0xA743A in the EU ROM, or 0xA742E in the JP ROM.
 
 Then replace them with: 0000 0048 0000 00F00000
 This is an instruction replacement that loads the value 0xF000 into r0.
-
 Since it overwrites the conditions for the x postion of the beams it goes directly to the str code.
+
+
+Virtual Console differences:
+1. Replaces the way a condition is evaluated to call a function by using svc #6.
+Removing the function or always enabling it resulted in no strange behavior. Purpose is currently unknown.
+
+2. It lowers the value at 0xA7600 (0x0F to 0x05), reducing the white screen flashes during the normal ending scene, right after the master emerald starts shining.
+To copy this change for the US ROM go to 0xA7284, or 0xA760C for the EU ROM.
