@@ -22,8 +22,11 @@ Since it overwrites the conditions for the x postion of the beams it goes direct
 
 
 Virtual Console differences:
-1. Replaces the way a condition is evaluated to call a function by using svc #6.
-Removing the function or always enabling it resulted in no strange behavior. Purpose is currently unknown.
+1. Replaces the way a condition is evaluated to call a function by using svc #6. This makes the shield items to flash less.
+In the original game, when a character has a shield the character sprite displays for 2 frames before switching to the shield sprite for 2 more frames.
+The VC patch makes it so that the shield sprite takes 4 frames instead of 2.
+The actual purpose is unclear but it can be assumed that by reducing the frequency there's less chance the shield's repetitive motion could cause image retention.
+See also: https://iwataasks.nintendo.com/interviews/3ds/eshop/0/4/
 
 2. It lowers the value at 0xA7600 (0x0F to 0x05), reducing the white screen flashes during the normal ending scene, right after the master emerald starts shining.
 To copy this change for the US ROM go to 0xA7284, or 0xA760C for the EU ROM.
